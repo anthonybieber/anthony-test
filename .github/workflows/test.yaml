@@ -5,6 +5,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    steps:
+    container:
+      image: ghcr.io/achieve-3000/core-infra:latest
+      credentials:
+        username: ci-a3k
+        password: ${{ secrets.CI_PAT }}
+      steps:
       - name: actor
-        run: echo ${{ github.actor }}
+        run: terraform -v
