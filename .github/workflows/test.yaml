@@ -11,5 +11,5 @@ jobs:
         username: ci-a3k
         password: ${{ secrets.CI_PAT }}
       steps:
-      - name: actor
-        run: terraform -v
+        - name: actor
+          run: terraform -v
